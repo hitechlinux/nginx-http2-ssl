@@ -1,0 +1,5 @@
+$ Fully conf's with ssl will come... i don't have time now.
+server {
+ 
+	listen 443 http2;
+	listen [::]:443 http2;
