@@ -8,7 +8,7 @@ wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 sudo apt-get update; apt-get upgrade -y
 apt-get install nginx -y
 service nginx stop; service apache2 stop
-apt-get install build-essential libssl-dev openssl nano git wget curl -y
+apt-get install build-essential libssl-dev openssl zip unzip nano git wget curl -y
 apt-get install geoip-database libgeoip1 -y
 echo "Wrote Domain Name example.com For SSL CRT! (And Hit Enter)"
 read domain
@@ -21,6 +21,10 @@ sudo openssl dhparam -out /etc/letsencrypt/live/$domain/dhparam-2048.pem 2048
 mkdir -p /var/log/nginx
 mkdir -p /etc/nginx/live/
 mkdir -p /etc/nginx/rules/
+mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.dat_bak
+cd /usr/share/GeoIP/
+wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+gunzip GeoIP.dat.gz
 echo "**********************************************"
 echo "**********************************************"
 echo "**********************************************"
