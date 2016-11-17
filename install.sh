@@ -2,8 +2,8 @@
 # X Ubuntu 14.04.
 if [ "`lsb_release -is`" == 'Ubuntu' ]; then
 sudo apt-get purge --remove nginx
-echo "deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx..http2.list
-echo "deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx..http2.list
+echo "deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.http2.list
+echo "deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.http2.list
 wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 sudo apt-get update; apt-get upgrade -y
 apt-get install nginx -y
