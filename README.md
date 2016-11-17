@@ -54,3 +54,5 @@
   $. **``nginx -t``**
   
   $. **``service nginx start``**
+  
+  You can test your website here https://tools.keycdn.com/http2-test
