@@ -9,6 +9,7 @@ sudo apt-get update; apt-get upgrade -y
 apt-get install nginx -y
 service nginx stop; service apache2 stop
 apt-get install build-essential libssl-dev openssl nano git wget curl -y
+apt-get install geoip-database libgeoip1 -y
 echo "Wrote Domain Name example.com For SSL CRT! (And Hit Enter)"
 read domain
 cd ~/
@@ -17,6 +18,9 @@ cd ~/letsencrypt
 ./letsencrypt-auto --help
 ./letsencrypt-auto certonly --standalone -d $domain
 sudo openssl dhparam -out /etc/letsencrypt/live/$domain/dhparam-2048.pem 2048
+mkdir -p /var/log/nginx
+mkdir -p /etc/nginx/live/
+mkdir -p /etc/nginx/rules/
 echo "**********************************************"
 echo "**********************************************"
 echo "**********************************************"
