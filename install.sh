@@ -21,6 +21,8 @@ sudo openssl dhparam -out /etc/letsencrypt/live/$domain/dhparam-2048.pem 2048
 mkdir -p /var/log/nginx
 mkdir -p /etc/nginx/live/
 mkdir -p /etc/nginx/rules/
+mkdir -p /hostdata/default/public_html/
+echo "<html><center><h1>Hi!</h1></center></html>" >> /hostdata/default/public_html/index.html
 mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.dat_bak
 cd /usr/share/GeoIP/
 wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
@@ -28,6 +30,8 @@ gunzip GeoIP.dat.gz
 echo "**********************************************"
 echo "**********************************************"
 echo "**********************************************"
+echo "Host dir /hostdata"
+echo "Letsencrupt dir ~/letsencrypt"
 echo "CRT INTO /etc/letsencrypt/live/$domain/ DIR"
 else 
    This Script is only for ubuntu 14.04. 
