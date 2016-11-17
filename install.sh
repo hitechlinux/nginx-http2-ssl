@@ -25,7 +25,7 @@ echo "**********************************************"
 echo "**********************************************"
 echo "**********************************************"
 echo "KEY INTO /etc/ssl/private/ DIR"
-echo "CRT INTO /etc/letsencrypt/live/$domain/" DIR"
+echo "CRT INTO /etc/letsencrypt/live/$domain/ DIR"
 else 
    This Script is only for ubuntu 14.04. 
    For problems or different distro create a issue!
