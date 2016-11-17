@@ -31,7 +31,7 @@ echo "**********************************************"
 echo "**********************************************"
 echo "**********************************************"
 echo "Host dir /hostdata"
-echo "Letsencrupt dir ~/letsencrypt"
+echo "Letsencrypt dir ~/letsencrypt"
 echo "CRT INTO /etc/letsencrypt/live/$domain/ DIR"
 else 
    This Script is only for ubuntu 14.04. 
