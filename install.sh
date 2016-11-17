@@ -11,7 +11,6 @@ service nginx stop; service apache2 stop
 apt-get install build-essential libssl-dev openssl nano git wget curl -y
 echo "Wrote Domain Name example.com For SSL CRT! (And Hit Enter)"
 read domain
-echo "KEYS INTO /etc/ssl/private/ DIR"
 echo "Starting To Generate Private Key for $domain..."
 openssl genrsa -out /etc/ssl/private/$domain.key 2048
 echo "Generating the Certificate Signing Request For $domain..."
@@ -22,7 +21,11 @@ git clone https://github.com/letsencrypt/letsencrypt
 cd ~/letsencrypt
 ./letsencrypt-auto --help
 ./letsencrypt-auto certonly --standalone -d $domain
-
+echo "**********************************************"
+echo "**********************************************"
+echo "**********************************************"
+echo "KEY INTO /etc/ssl/private/ DIR"
+echo "CRT INTO /etc/letsencrypt/live/$domain/" DIR"
 else 
    This Script is only for ubuntu 14.04. 
    For problems or different distro create a issue!
